@@ -1,0 +1,339 @@
+<head>
+  
+  <title>There is 104 days of summer vacation</title>
+</head>
+<style> 
+  .barcode-space {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #68664E;
+    width: 1000px;
+    margin: 9px auto;
+    text-shadow: 2px 0px #969370;
+  }
+  .title-img {
+    
+  }
+  .title-space {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    width: 980px;
+    margin: auto 0px;
+    height: 60px; /* Increased height for padding */
+    text-shadow: 4px 4px #413F37;
+    background-color: #969370;
+    padding: 10px 10px 20px; /* Added padding for more space */
+    box-shadow: inset 3px 3px #969370, inset 0px -8px #68664E ,4px 4px #68664E , -3px -3px #fff ;    
+  }
+
+   .spoiler {
+    background-color: #ECE9D8;
+    color: transparent;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  .spoiler:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+  
+  .spoiler span {
+    display: none;
+  }
+
+  .spoiler:hover span {
+    display: inline;
+  }
+  
+   .alert {
+    background-color: #FFA500;
+    color: transparent;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  .alert:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+  
+  .alert span {
+    display: none;
+  }
+
+  .alert:hover span {
+    display: inline;
+  }
+.centre {
+  width: 0;
+  margin: 50px auto;
+  box-shadow: -7px -7px #969370;
+  overflow: hidden;
+  animation: stretchIn 1s ease-out forwards;
+}
+
+@keyframes stretchIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 1000px; /* Adjust this to the width you desire */
+  }
+}
+
+.centre p,
+.centre HEADER,
+.centre ul {
+  
+  width: 0;
+  animation: typeIn 2s steps(30) 1s forwards; /* Adjust steps as needed */
+}
+
+@keyframes typeIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* You can adjust specific font sizes for headers and paragraphs */
+
+
+  .content { 
+    background: #fff;
+    padding: 20px 40px 40px 10px; /* Added padding for better spacing */
+    box-shadow: inset 3px 3px #969370, inset -4px -4px #C9C6B7 ,4px 4px #68664E , -3px -3px #fff , inset -3px -3px #fff,inset -2px -2px #68664E;    
+    border: 8px solid #ECE9D8; 
+  }
+
+  .diamond-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: linear-gradient(45deg, #24ce2c 25%, transparent 25%, transparent 75%, #24ce2c 75%, #24ce2c),
+                      linear-gradient(45deg, #24ce2c 25%, transparent 25%, transparent 75%, #24ce2c 75%, #24ce2c);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    animation: marquee 2s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      background-position: 0 40px, 20px 60px;
+    }
+    100% {
+      background-position: 40px 0px, 60px 20px;
+    }
+  }
+
+  BODY {
+    width: 100%;
+    background: #36c712;
+    margin: 0;
+    line-height: 1.0em;
+    font-family: monospace;
+  }
+
+  HEADER {
+    padding: 25px 0px 0px 0px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 1.0em;
+    color: #120110;
+  }
+
+  h {
+    padding: 0px 0px 0px 0px;
+    line-height: 1.0em;
+    margin-left: 2.5em;
+    font-weight: bold;
+  }
+
+  p {
+    padding: 0px 0px 0px 0px;
+    line-height: 1.2em;
+    margin-left: 2.5em;
+  }
+
+  input {
+    padding: 0px 0px 0px 0px;
+    line-height: 1.2em;
+    margin-left: 2.5em;
+  }
+  button  {
+    padding: 0px 0px 0px 0px;
+    line-height: 1.2em;
+    margin-left: 2.5em;
+  }
+
+</style>
+<style>
+    /* Popup Styling */
+    @keyframes BlurIn {
+from {    FILTER: brightness(0) BLUR(50px); scale: 0.0;}
+to {      FILTER: brightness(1) BLUR(0px); scale: 1.0;}
+}
+    .popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 999999999999999999999999999999999999999999999;
+        transition: opacity 0.98s ease, visibility 0.98s ease;
+    }
+    .popup {
+       
+        padding: 20px;
+       
+        text-align: center;
+        width: 500px;
+        z-index: 999999999999999999999999999999999999999999999;
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+        backdrop-filter: blur(15px);
+    }
+    .popup-header {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .popup-message {
+        color: white;
+        margin: 15px 0;
+    }
+    .close-btn {
+        background: blue;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .close-btn:hover {
+        background: cyan;
+    }
+
+    /* Header Container */
+    .header-container {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between header and button */
+    }
+    .download-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .download-btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Center H1 and H2 */
+    h1, h2.ToastingNoa {
+        text-align: center;
+    }
+</style>
+<style>
+  .code-block {
+    background-color: #2e2e2e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .code-block code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+  }
+</style>
+<div id="popupContainer" class="popup-container">
+    <div class="popup">
+        <div class="popup-header" id="popupTitle" bbcode_enabled >Plugin Authors</div>
+        <div class="popup-message" id="popupMessage" bbcode_enabled>
+            Impact has been abonded, please use official galleries as extensions will not be updated here. <br><br>
+        -The Warp Core Team
+        </div>
+        <button class="close-btn" id="closebtnpopup" onclick="closePopup()">Close</button>
+    </div>
+</div>
+<script>
+    function openPopup(popupTitle,popupMessage) {
+        
+            document.getElementById("popupTitle").innerHTML = popupTitle;
+document.getElementById("popupMessage").innerHTML = popupMessage;
+        document.getElementById("popupContainer").style.visibility = "visible";
+        document.getElementById("popupContainer").style.opacity = "1";
+    }
+
+    // Function to Close Popup
+    function closePopup() {
+        document.getElementById("popupContainer").style.opacity = "0";
+        setTimeout(() => {
+            document.getElementById("popupContainer").style.visibility = "hidden";
+        }, 300);
+    }
+
+    // Auto-open popup after 1 second
+
+    function ohhithere() {
+    alert("hi")
+    setTimeout(openPopup("2FA Screentime code","38582 \nThis is your 2FA Code"), 1000);
+    }
+    //setTimeout(openPopup("System CRITICAL Error","Er38582 \nThe App Cannot communic"), 1000);
+
+    const button = document.getElementById('ext');
+button.onclick = function() {
+    };
+
+</script>
+<div class="diamond-pattern"></div>
+<div class="centre">
+<div class="title-space" style="display: flex; justify-content: center; align-items: center; height: 100px;">
+  <br><br>Server Shit n stuff
+</div>
+  <div class="content">
+
+
+
+    <HEADER>Documentation</HEADER>
+    <br>
+    <h>helpme</h>
+    <br>
+    <p>Someone help</p>
+  </div>
+  
+  <div class="barcode-space">Open Child Locker</div>
+</div>
+
